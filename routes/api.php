@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/photo','PhotoController@savePhoto');
-Route::get('/photos','PhotoController@listPhotos');
-Route::get('/photo/{id}','PhotoController@getPhoto');
+Route::post('/photo','App\Http\Controllers\PhotoController@savePhoto');
+Route::get('/photos','App\Http\Controllers\PhotoController@listPhotos');
+Route::get('/photo/{id}','App\Http\Controllers\PhotoController@getPhoto');
+Route::get('/photographers','App\Http\Controllers\PhotographerController@listPhotographers');
+Route::get('/photographer/{id}','App\Http\Controllers\PhotographerController@getPhotographer');
 
